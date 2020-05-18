@@ -1,0 +1,9 @@
+/_build/
+/.fetch
+/cover/
+/deps/
+/doc/
+
+*.ez
+erl_crash.dump
+simple_rpc-*.tar
