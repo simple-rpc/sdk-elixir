@@ -10,7 +10,7 @@ defmodule SimpleRpc.MixProject do
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-
+      dialyzer: [plt_add_apps: [:plug, :tesla]],
       # hex
       description: "SimpleRpc",
       package: package(),
@@ -26,6 +26,9 @@ defmodule SimpleRpc.MixProject do
 
   defp deps do
     [
+      {:jason, "~> 1.1"},
+      {:tesla, "~> 1.3", optional: true},
+      {:plug, "~> 1.10", optional: true},
       {:credo, "~> 1.1", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.0.0-rc.7", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.22", only: :dev, runtime: false}
